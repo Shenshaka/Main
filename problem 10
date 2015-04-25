@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+   int i = 0;
+   double d, cem = 0;
+   cin >> d;
+   while (true)
+   {
+       cem += 1 / (d - i);
+       if (cem > 0.5) break;
+       else i++;
+   }
+   cout << d-i << endl;
+   return 0; 
+}
