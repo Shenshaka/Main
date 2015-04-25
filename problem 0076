@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+   int n, m, a, say = 0;
+   cin >> a >> m;
+   while (m >= 0)
+   {
+       m -= a++;
+       say++;
+   }
+   cout << say-1 << endl;
+   return 0;
+}
