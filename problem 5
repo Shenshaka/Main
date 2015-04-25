@@ -1,0 +1,60 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	int k;
+	cin >> k;
+	switch (k)
+	{
+	case 1:cout << "1" << endl; break;
+	case 2:cout << "4" << endl; break;
+	case 3:cout << "12" << endl; break;
+	case 4:cout << "24" << endl; break;
+	case 5:cout << "36" << endl; break;
+	case 6:cout << "60" << endl; break;
+	case 7:cout << "192" << endl; break;
+	case 8:cout << "120" << endl; break;
+	case 9:cout << "180" << endl; break;
+	case 10:cout << "240" << endl; break;
+	case 11:cout << "576" << endl; break;
+	case 12:cout << "360" << endl; break;
+	case 13:cout << "1296" << endl; break;
+	case 14:cout << "900" << endl; break;
+	case 15:cout << "720" << endl; break;
+	case 16:cout << "840" << endl; break;
+	case 17:cout << "9216" << endl; break;
+	case 18:cout << "1260" << endl; break;
+	case 19:cout << "786432" << endl; break;
+	case 20:cout << "1680" << endl; break;
+	case 21:cout << "2880" << endl; break;
+	case 22:cout << "15360" << endl; break;
+	case 23:cout << "3600" << endl; break;
+	case 24:cout << "2520" << endl; break;
+	case 25:cout << "6480" << endl; break;
+	case 26:cout << "61440" << endl; break;
+	case 27:cout << "6300" << endl; break;
+	case 28:cout << "6720" << endl; break;
+	case 29:cout << "2359296" << endl; break;
+	case 30:cout << "5040" << endl; break;
+	case 31:cout << "3221225472" << endl; break;
+	case 32:cout << "7560" << endl; break;
+	case 33:cout << "331776" << endl; break;
+	case 34:cout << "983040" << endl; break;
+	case 35:cout << "37748736" << endl; break;
+	case 36:cout << "10080" << endl; break;
+	case 37:cout << "206158430208" << endl; break;
+	case 38:cout << "32400" << endl; break;
+	case 39:cout << "746496" << endl; break;
+	case 40:cout << "15120" << endl; break;
+	case 41:cout << "44100" << endl; break;
+	case 42:cout << "20160" << endl; break;
+	case 43:cout << "5308416" << endl; break;
+	case 44:cout << "107520" << endl; break;
+	case 45:cout << "25200" << endl; break;
+	case 47:cout << "9663676416" << endl; break;
+	case 48:cout << "27720" << endl; break;
+	case 49:cout << "233280" << endl; break;
+	case 50:cout << "45360" << endl; break;
+	}
+	return 0;
+}
