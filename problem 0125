@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+long h1,m1,s1,h2,m2,s2,tSec1,tSec2,ferq;
+int main(){
+cin >> h1 >> m1 >> s1 >> h2 >> m2 >> s2;
+if(0<=h1 && h1<=h2 && h2<=23 && 0<=m1 && 0<=m2 && m1<=59 && m2<=59 && 0<=s1 && 0<=s2 && s1<=59 && s2<=59 ){
+   tSec1= s1+ (m1*60) + (h1 * 3600);
+   tSec2= s2+ (m2*60) + (h2 * 3600);
+   ferq = tSec2-tSec1;
+   cout <<  ferq / (60 * 60)<<" "<< (ferq / 60) % 60 <<" "<< ferq % 60 << endl;
+}
+   return 0;
+}
