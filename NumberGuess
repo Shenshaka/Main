@@ -1,0 +1,71 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+class GuessGame
+{
+public:
+	GuessGame();
+	void Introduce();
+	bool CheckGuess(int& g);
+	void Run();
+
+private:
+	int SecretNumber;
+	int Tries;
+	int Guess;
+};
+
+GuessGame::GuessGame() : SecretNumber(rand() % 100 + 1), Tries(0), Guess(0)
+{ }
+
+void GuessGame::Introduce()
+{
+	cout << "\tWelcome to the awesome number guessing game!\n\n";
+}
+
+bool GuessGame::CheckGuess(int& g)
+{
+	if (g > SecretNumber)
+	{
+		cout << "Your guess is to high!\n\n";
+		return false;
+	}
+	else if (g < SecretNumber)
+	{
+		cout << "Your guess is too low!\n\n";
+		return false;
+	}
+	else
+	{
+		cout << "Congratulations! You have guessed the correct number.\n\n";
+		cout << "You guessed the number in " << Tries << " tries.\n\n";
+		return true;
+	}	
+}
+
+void GuessGame::Run()
+{
+	while (Guess!= SecretNumber)
+	{
+		cout << "Enter guess: ";
+		cin >> Guess;
+		++Tries;
+
+		if (CheckGuess(Guess))
+			break;
+	}
+}
+
+int main()
+{
+	srand(static_cast<unsigned int>(time(0)));
+
+	GuessGame MyGame;
+	MyGame.Introduce();
+	MyGame.Run();
+	cin.ignore();
+	cin.get();
+	return 0;
+}
