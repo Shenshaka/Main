@@ -1,0 +1,132 @@
+#include <iostream>
+#include <string>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+namespace jumble
+{
+	const string Words[4] =
+	{
+		"programming","computer","software","hardware"
+	};
+
+	const string Hints[4] =
+	{
+		"This is what software enginners do.",
+		"This is made of a bunch of components in a case",
+		"This is a technical term for program.",
+		"This are the components that make up your computer."
+	};
+}
+
+class WordJumble
+{
+public:
+	WordJumble();
+	void JumbleWord(string& w);
+	void Introduce();
+	bool CheckGuess(string& g);
+	void Run();
+
+private:
+	int Tries;
+	int Index;
+	string Word;
+	string Hint;
+	string JumbledWord;
+	string Guess;
+};
+
+WordJumble::WordJumble()
+:	 Tries(0),Index(rand() % 4), Word(jumble::Words[Index]), Hint(jumble::Hints[Index]),
+	 JumbledWord(""), Guess("")
+{ }
+
+void WordJumble::JumbleWord(string& w)
+{
+	// TODO: Implement JumbleWord
+	JumbledWord = w;
+	int length = JumbledWord.size();
+
+	for (int i = 0; i < length; i++)
+	{
+		int index1 = (rand() % length);
+		int index2 = (rand() % length);
+
+		char temp = JumbledWord[index1];
+		JumbledWord[index1] = JumbledWord[index2];
+		JumbledWord[index2] = temp;
+	}
+}
+
+void WordJumble::Introduce()
+{
+	// TODO: Implement Introduce
+	JumbleWord(Word);
+
+	cout << "\tWelcome To Word Jumble!\n\n";
+	cout << "Unscreamble the letters to guess the word. \n";
+	cout << "Imput 'hint' for hint\n";
+	cout << "Imput 'quit' for quit\n";
+
+	cout << "The Jumbled word is: " << JumbledWord;
+}
+
+bool WordJumble::CheckGuess(string& g)
+{
+	// TODO: Implement CheckGuess
+	++Tries;
+
+	if (g == "hint")
+	{
+		cout << Hint;
+		return false;
+	}
+	else if (g == "quit")
+	{
+		cout << "You have chosen to end the game.\n";
+		cout << "Thank you for playing Word Jumble!";
+		return true;
+	}
+	else if (g == Word)
+	{
+		cout << "Congratulations! You have guessed the word in " << Tries << " tries.\n";
+		cout << "Thank you for playing Word Jumble!";
+		return true;
+	}
+	else
+	{
+		cout << "Sorry, that is the incorrect guess.";
+		return false;
+	}
+
+}
+
+void WordJumble::Run()
+{
+	// TODO: Implement Run
+	Introduce();
+	
+	while (true)
+	{
+		cout << "Your guess: ";
+		cin >> Guess;
+
+		if (CheckGuess(Guess))
+			break;
+	}
+}
+
+int main()
+{
+	srand(static_cast<unsigned int>(time(0)));
+
+	WordJumble myGame;
+	myGame.Run();
+
+
+	cin.ignore();
+	cin.get();
+	return 0;
+}
